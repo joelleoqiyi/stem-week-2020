@@ -16,7 +16,7 @@ const http = require("http").createServer(app)
 //setting up server "settings"
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
-app.use('/hongShuoTestServer', dataPro);
+app.use('/testPicture', dataPro);
 http.listen(port, () => {
   console.log(`listening to port ${port}`)
 });
