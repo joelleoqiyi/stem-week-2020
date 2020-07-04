@@ -33,7 +33,7 @@ difficultStage.post('/', cors(), function (req, res) {
 
   } */
   console.log(req.cookies);
-  if (req.cookies.email === "cyx"){
+  if (req.cookies.key === "cyx"){
     res.cookie('key', "cyx", { maxAge: 900000, httpOnly: true, secure: true });
     res.send("succesfully sent.")
   } else {
