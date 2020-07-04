@@ -8,6 +8,7 @@ const assert = require("assert");
 const bodyParser = require('body-parser');
 const express = require("express");
 const port = process.env.PORT || 3000;
+const cookieParser = require('cookie-parser')
 
 //initialising server and socket.io connection
 const app = express();
@@ -16,6 +17,7 @@ const http = require("http").createServer(app)
 
 //setting up server "settings"
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser())
 app.use(express.json());
 app.use('/testPicture', easyStage);
 app.use('/testAnswer', difficultStage);

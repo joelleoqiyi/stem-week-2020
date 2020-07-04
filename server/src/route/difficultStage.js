@@ -27,12 +27,19 @@ difficultStage.post('/', cors(), function (req, res) {
   if (req.body.username !== undefined && req.body.password !== undefined && req.body.userToken !== undefined) {
   */
   //res.sendFile(__dirname + '/test.png');
-  //res.cookie('email', "cyx", { maxAge: 900000, httpOnly: true });
+  //
   //res.send("hello world!")
   /*if (req.body.answer && req.body.answer === "something"){
 
   } */
-  console.log(req);
+  console.log(req.cookies);
+  if (req.cookies.email === "cyx"){
+    res.cookie('key', "cyx", { maxAge: 900000, httpOnly: true, secure: true });
+    res.send("succesfully sent.")
+  } else {
+    res.end("wrong key")
+  }
+
 })
 
 export {difficultStage}

@@ -15,7 +15,10 @@ var bodyParser = require('body-parser');
 
 var express = require("express");
 
-var port = process.env.PORT || 3000; //initialising server and socket.io connection
+var port = process.env.PORT || 3000;
+
+var cookieParser = require('cookie-parser'); //initialising server and socket.io connection
+
 
 var app = express();
 
@@ -27,6 +30,7 @@ var http = require("http").createServer(app); //setting up server "settings"
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+app.use(cookieParser());
 app.use(express.json());
 app.use('/testPicture', _easyStage.easyStage);
 app.use('/testAnswer', _difficultStage.difficultStage);
