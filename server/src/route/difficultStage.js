@@ -33,7 +33,6 @@ difficultStage.post('/', cors(), function (req, res) {
 
   } */
   console.log(req.cookies);
-  let date = new Date()
   if (req.cookies.key === "cyx"){
     res.cookie('key', "cyx", {maxAge: 604800000,httpOnly: true, secure: true }); //expires: false
     res.send("succesfully sent.")
