@@ -1,6 +1,6 @@
 //declaring variables, npm packages
 var express = require('express')
-var dataPro = express.Router()
+var easyStage = express.Router()
 var cors = require('cors')
 
 //setting up CORS settings
@@ -15,13 +15,13 @@ var corsOptions = {
   }
 }
 
-dataPro.use(function timeLog (req, res, next) {
+easyStage.use(function timeLog (req, res, next) {
   console.log(`\(NEW\) user!`)
   next()
 })
 
 
-dataPro.post('/', cors(), function (req, res) {
+easyStage.post('/', cors(), function (req, res) {
   /*
   let username, password, userToken;
   if (req.body.username !== undefined && req.body.password !== undefined && req.body.userToken !== undefined) {
@@ -31,4 +31,4 @@ dataPro.post('/', cors(), function (req, res) {
   //res.send("hello world!")
 })
 
-export {dataPro}
+export {easyStage}

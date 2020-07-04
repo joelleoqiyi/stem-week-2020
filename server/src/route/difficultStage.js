@@ -1,6 +1,6 @@
 //declaring variables, npm packages
 var express = require('express')
-var dataPro = express.Router()
+var difficultStage = express.Router()
 var cors = require('cors')
 
 //setting up CORS settings
@@ -15,59 +15,24 @@ var corsOptions = {
   }
 }
 
-dataPro.use(function timeLog (req, res, next) {
-  console.log(`\(NEW\) dataProRequest @ Time: ${getCurrDate(0)}`)
+difficultStage.use(function timeLog (req, res, next) {
+  console.log(`\(NEW\) user!`)
   next()
 })
 
 
-dataPro.post('/', cors(corsOptions), function (req, res) {
+difficultStage.post('/', cors(), function (req, res) {
+  /*
   let username, password, userToken;
   if (req.body.username !== undefined && req.body.password !== undefined && req.body.userToken !== undefined) {
-    username = String(req.body.username);
-    password = String(req.body.password);
-    userToken = String(req.body.userToken);
-  } else {
-    console.log(`\(FAILED\) dataPro: username or password or userToken invalid argument \n\tusername: ${req.body.username}, password: ${req.body.password}\n\tuserToken: ${req.body.userToken}`);
-    res.send([
-        "dataProFailed",
-        {
-            "type": "argumentInvalid",
-            "errorMessage": "username or password or userToken argument invalid or empty"
-        }
-    ]);
-    return;
-  }
-  (async()=>{
-    let validateRes = await queryDocument(
-        auth,
-        [{"userName": username}, {"userPassword": password}, {"userToken": userToken}],
-        ["currActiveStatus", "userToken", "currActiveRooms"]
-    );
-    if (validateRes !== null && validateRes.currActiveStatus === true && validateRes.userToken === userToken){
-        console.log(`\(PASS\) dataPro: PRO user requested data`);
-        res.send([
-           "dataProCleared",
-           {
-               "type": "pass",
-               "payload": {
-                 "userToken": userToken,
-                 "rooms": validateRes.currActiveRooms || []
-               }
-           }
-        ]);
-    } else {
-        console.log(`\(FAILED\) dataPro: userValidation failed\n\tusername: ${username}, password: ${password}, userToken: ${userToken}`);
-        res.send([
-            "dataProFailed",
-            {
-                "type": "userValidationFailed",
-                "errorMessage": "user not logged in or userToken invalid"
-            }
-        ]);
-    }
-    res.end();
-  })().catch(err => console.error(`\(ERROR\) dataPro logout:\n\t${err}`));
+  */
+  //res.sendFile(__dirname + '/test.png');
+  //res.cookie('email', "cyx", { maxAge: 900000, httpOnly: true });
+  //res.send("hello world!")
+  /*if (req.body.answer && req.body.answer === "something"){
+
+  } */
+  console.log(req);
 })
 
 export {dataPro}
