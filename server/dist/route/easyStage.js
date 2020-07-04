@@ -3,13 +3,13 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.dataPro = void 0;
+exports.easyStage = void 0;
 
 //declaring variables, npm packages
 var express = require('express');
 
-var dataPro = express.Router();
-exports.dataPro = dataPro;
+var easyStage = express.Router();
+exports.easyStage = easyStage;
 
 var cors = require('cors'); //setting up CORS settings
 
@@ -24,11 +24,11 @@ var corsOptions = {
     }
   }
 };
-dataPro.use(function timeLog(req, res, next) {
+easyStage.use(function timeLog(req, res, next) {
   console.log("(NEW) user!");
   next();
 });
-dataPro.post('/', cors(), function (req, res) {
+easyStage.post('/', cors(), function (req, res) {
   /*
   let username, password, userToken;
   if (req.body.username !== undefined && req.body.password !== undefined && req.body.userToken !== undefined) {

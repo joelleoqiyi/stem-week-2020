@@ -35,4 +35,4 @@ difficultStage.post('/', cors(), function (req, res) {
   console.log(req);
 })
 
-export {dataPro}
+export {difficultStage}

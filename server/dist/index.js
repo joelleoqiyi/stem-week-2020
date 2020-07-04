@@ -4,6 +4,8 @@ require("babel-polyfill");
 
 var _easyStage = require("./route/easyStage");
 
+var _difficultStage = require("./route/difficultStage");
+
 //importing neccessary functions from other supporting files
 //to allow babel to transpile async/await
 //declaring variables, npm packages
@@ -26,7 +28,8 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(express.json());
-app.use('/helloworld', _easyStage.dataPro);
+app.use('/testPicture', _easyStage.easyStage);
+app.use('/testAnswer', _difficultStage.difficultStage);
 http.listen(port, function () {
   console.log("listening to port ".concat(port));
 });
