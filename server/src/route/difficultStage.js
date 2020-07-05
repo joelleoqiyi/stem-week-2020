@@ -4,7 +4,7 @@ var difficultStage = express.Router()
 var cors = require('cors')
 
 //setting up CORS settings
-var whitelist = ['http://localhost:3000'];
+var whitelist = ['http://localhost:1234'];
 var corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
@@ -12,7 +12,8 @@ var corsOptions = {
     } else {
       callback(new Error('Not allowed by CORS'))
     }
-  }
+  },
+  'credentials': true
 }
 
 difficultStage.use(function timeLog (req, res, next) {
@@ -21,7 +22,7 @@ difficultStage.use(function timeLog (req, res, next) {
 })
 
 
-difficultStage.post('/', cors(), function (req, res) {
+difficultStage.post('/', cors(corsOptions), function (req, res) {
   /*
   let username, password, userToken;
   if (req.body.username !== undefined && req.body.password !== undefined && req.body.userToken !== undefined) {
