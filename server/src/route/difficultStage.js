@@ -18,6 +18,7 @@ var corsOptions = {
 
 difficultStage.use(function timeLog (req, res, next) {
   console.log(`\(NEW\) user!`)
+  console.log(corsOptions)
   next()
 })
 
