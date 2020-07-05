@@ -13,6 +13,7 @@ var corsOptions = {
       callback(new Error('Not allowed by CORS'))
     }
   },
+  'preflightContinue':true,
   'credentials': true
 }
 
