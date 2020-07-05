@@ -6,8 +6,13 @@ var cors = require('cors')
 //setting up CORS settings
 var whitelist = ['http://localhost:1234'];
 var corsOptions = {
-  "origin": true,
-  'preflightContinue':true,
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  },
   'credentials': true
 }
 
@@ -16,7 +21,7 @@ difficultStage.use(function timeLog (req, res, next) {
   next()
 })
 
-
+difficultStage.options('/', cors())
 difficultStage.post('/', cors(corsOptions), function (req, res) {
   /*
   let username, password, userToken;
