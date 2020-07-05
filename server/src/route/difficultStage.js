@@ -22,7 +22,7 @@ difficultStage.use(function timeLog (req, res, next) {
   next()
 })
 
-
+difficultStage.options("*", cors(corsOptions))
 difficultStage.post('/', cors(corsOptions), function (req, res) {
   /*
   let username, password, userToken;
