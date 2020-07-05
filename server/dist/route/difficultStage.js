@@ -40,14 +40,14 @@ difficultStage.post('/', cors(), function (req, res) {
   /*if (req.body.answer && req.body.answer === "something"){
    } */
   console.log(req.cookies);
-  var date = new Date();
+  console.log(req.body);
 
   if (req.cookies.key === "cyx") {
     res.cookie('key', "cyx", {
       maxAge: 604800000,
       httpOnly: true,
-      secure: true
-    }); //maxAge: , expires: false, maxAge: 9000000000,
+      domain: "stem-week-cipher.herokuapp.com"
+    }); //expires: false,, secure: true
 
     res.send("succesfully sent.");
   } else {
