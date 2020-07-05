@@ -17,6 +17,7 @@ const http = require("http").createServer(app)
 
 //setting up server "settings"
 app.use(bodyParser.urlencoded({ extended: true }));
+app.options('*', cors());
 app.use(cookieParser())
 app.use(express.json());
 app.use('/testPicture', easyStage);

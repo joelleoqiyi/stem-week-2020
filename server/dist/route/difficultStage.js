@@ -14,7 +14,7 @@ exports.difficultStage = difficultStage;
 var cors = require('cors'); //setting up CORS settings
 
 
-var whitelist = ['http://localhost:3000'];
+var whitelist = ['http://localhost:1234'];
 var corsOptions = {
   origin: function origin(_origin, callback) {
     if (whitelist.indexOf(_origin) !== -1) {
@@ -22,13 +22,14 @@ var corsOptions = {
     } else {
       callback(new Error('Not allowed by CORS'));
     }
-  }
+  },
+  'credentials': true
 };
 difficultStage.use(function timeLog(req, res, next) {
   console.log("(NEW) user!");
   next();
 });
-difficultStage.post('/', cors(), function (req, res) {
+difficultStage.post('/', cors(corsOptions), function (req, res) {
   /*
   let username, password, userToken;
   if (req.body.username !== undefined && req.body.password !== undefined && req.body.userToken !== undefined) {
@@ -46,8 +47,8 @@ difficultStage.post('/', cors(), function (req, res) {
     res.cookie('key', "cyx", {
       maxAge: 604800000,
       httpOnly: true,
-      domain: "stem-week-cipher.herokuapp.com"
-    }); //expires: false,, secure: true
+      domain: ".stem-week-cipher.herokuapp.com"
+    }); //expires: false,, secure: true,httpOnly: true
 
     res.send("succesfully sent.");
   } else {
