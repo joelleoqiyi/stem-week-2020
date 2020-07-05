@@ -38,7 +38,12 @@ difficultStage.post('/', cors(corsOptions), function (req, res) {
   console.log(req.body);
   if (req.cookies.key === "cyx"){
     res.cookie('key', "cyx", {maxAge: 604800000, httpOnly: true, domain:".stem-week-cipher.herokuapp.com" }); //expires: false,, secure: true,httpOnly: true
-    res.send("succesfully sent.")
+    res.send({
+      "status": "pass",
+      "payload": {
+        "url": "https://google.com"
+      }
+    })
   } else {
     res.end("wrong key")
   }

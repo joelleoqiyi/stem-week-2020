@@ -22,7 +22,7 @@ easyStage.use(function timeLog (req, res, next) {
   next()
 })
 
-
+easyStage.options("*", cors(corsOptions))
 easyStage.post('/', cors(corsOptions), function (req, res) {
   /*
   let username, password, userToken;
