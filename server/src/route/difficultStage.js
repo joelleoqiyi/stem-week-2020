@@ -6,7 +6,7 @@ var cors = require('cors')
 //setting up CORS settings
 var whitelist = ['http://localhost:1234'];
 var corsOptions = {
-  origin: "*",
+  "origin": true,
   'preflightContinue':true,
   'credentials': true
 }
