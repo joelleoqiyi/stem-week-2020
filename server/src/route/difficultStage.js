@@ -4,7 +4,7 @@ var difficultStage = express.Router()
 var cors = require('cors')
 
 //setting up CORS settings
-var whitelist = ['http://localhost:1234', "https://serenesmartlava--20y5c35liu.repl.co", "https://stem--rea123.repl.co/"];
+var whitelist = ['http://localhost:1234', "https://serenesmartlava--20y5c35liu.repl.co", "https://stem--rea123.repl.co"];
 var corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
