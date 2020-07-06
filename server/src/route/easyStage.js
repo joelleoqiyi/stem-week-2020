@@ -4,7 +4,7 @@ var easyStage = express.Router()
 var cors = require('cors')
 
 //setting up CORS settings
-var whitelist = ['http://localhost:1234'];
+var whitelist = ['http://localhost:1234', "https://repl.it"];
 var corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
