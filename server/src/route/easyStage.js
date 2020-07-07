@@ -31,7 +31,7 @@ easyStage.options("*", cors(corsOptions))
 easyStage.post('/check', cors(corsOptions), function (req, res) {
   if (req.body) {
     let questionNumber = (Number(req.body.qn) > -1 && Number(req.body.qn) < 8) ? Number(req.body.qn) : null;
-    let clientAnswer = req.body.answer ? String(req.body.answer) : null;
+    let clientAnswer = req.body.answer ? String(req.body.answer).trim().toLowerCase() : null;
     let temperedKeys = [];
     let lastNonTemperedKey = null;
     if (questionNumber !== null && clientAnswer){
