@@ -33,7 +33,7 @@ module.exports = {
       "url": "https://google.com"
     },
     {
-      "answer": "JNUW17",
+      "answer": "jnuw17",
       "keyName": "e5",
       "keyGiven": "eden",
       "url": "https://google.com"
@@ -53,7 +53,7 @@ module.exports = {
   ],
   difficultStageAnswers:[
     {
-      "answer": "Britain",
+      "answer": "britain",
       "keyName": "d0",
       "keyGiven": "eden",
       "imageGiven": "p1.png",
