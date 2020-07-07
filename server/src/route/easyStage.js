@@ -68,9 +68,7 @@ easyStage.post('/check', cors(corsOptions), function (req, res) {
           })
         }
       } else {
-        console.log(temperedKeys, easyStageAnswers[Number(lastNonTemperedKey)+1].url)
         for (let temperedIndivKey of temperedKeys){
-          console.log(temperedIndivKey);
           res.clearCookie(String(temperedIndivKey),
                           {httpOnly: true, domain: ".stem-week-cipher.herokuapp.com", path:"/easy"}
                         );

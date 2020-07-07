@@ -76,13 +76,13 @@ difficultStage.post('/check', cors(corsOptions), function (req, res) {
       } else {
         for (let temperedIndivKey of temperedKeys){
           res.clearCookie(String(temperedIndivKey),
-                          {httpOnly: true, domain: ".stem-week-cipher.herokuapp.com", path:"/easy"}
+                          {httpOnly: true, domain: ".stem-week-cipher.herokuapp.com", path:"/difficult"}
                         );
         }
         res.send({
           "status": "fail",
           "errorMessage": "Cookie tempering detected.",
-          "returnQn": difficultStageAnswers[Number(lastNonTemperedKey)+1].url
+          "returnQn": difficultStageAnswers[Number(lastNonTemperedKey)+1]["url"]
         });
         return;
       }
