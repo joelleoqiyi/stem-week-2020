@@ -30,11 +30,10 @@ var http = require("http").createServer(app); //setting up server "settings"
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-app.options('*', cors());
 app.use(cookieParser());
 app.use(express.json());
-app.use('/testPicture', _easyStage.easyStage);
-app.use('/testAnswer', _difficultStage.difficultStage);
+app.use('/easy', _easyStage.easyStage);
+app.use('/difficult', _difficultStage.difficultStage);
 http.listen(port, function () {
   console.log("listening to port ".concat(port));
 });

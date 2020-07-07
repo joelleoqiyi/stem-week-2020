@@ -19,8 +19,8 @@ const http = require("http").createServer(app)
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser())
 app.use(express.json());
-app.use('/testPicture', easyStage);
-app.use('/testAnswer', difficultStage);
+app.use('/easy', easyStage);
+app.use('/difficult', difficultStage);
 http.listen(port, () => {
   console.log(`listening to port ${port}`)
 });

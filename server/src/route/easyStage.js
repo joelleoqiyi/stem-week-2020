@@ -1,5 +1,6 @@
 //import supporting files
-import {whitelistURL, easyKey} from '../misc/config'
+import {whitelistURL, easyStageAnswers} from '../misc/config';
+import {cookieChecker} from '../misc/check';
 
 //declaring variables, npm packages
 var express = require('express')
@@ -27,35 +28,69 @@ easyStage.use(function timeLog (req, res, next) {
 
 easyStage.options("*", cors(corsOptions))
 
-easyStage.post('/b25l', cors(corsOptions), function (req, res) {
-  /*if (req.body) {
-    let questionNumber = req.body.qn ? String(req.body.qn) : null;
-    let answer = req.body.answer ? String(req.body.answer) : null;
-    if (questionNumber && answer){
-      answerKeys = Object.keys(easyKey);
-      cookieKeys = Object.keys(res.cookies);
-      for (indivKey of answerKeys){
-        if (cookieKeys.indexOf(indivKey) !== -1){
-          if (String(res.cookies.indivKey) !== String(easyKey.indivKey)){
-            res.clearCookie();
-            res.send();
-            return 0;
-          }
+easyStage.post('/check', cors(corsOptions), function (req, res) {
+  if (req.body) {
+    let questionNumber = (Number(req.body.qn) > -1 && Number(req.body.qn) < 8) ? Number(req.body.qn) : null;
+    let clientAnswer = req.body.answer ? String(req.body.answer) : null;
+    let temperedKeys = [];
+    if (questionNumber !== null && clientAnswer){
+      console.log(`\(NEW\) user submitting to EASY:${questionNumber}`);
+      if (res.cookies){
+        temperedKeys = cookieChecker(1, res.cookies, Number(questionNumber));
+      } else {
+        //only accept if first time
+        if (questionNumber === 0){
+          temperedKeys === [];
         } else {
-          //end
+          res.send({
+            "status": "fail",
+            "errorMessage": "Empty Cookie"
+          });
+          return;
         }
       }
+      if (Array.isArray(temperedKeys) === true && temperedKeys.length === 0){
+        if (String(clientAnswer) === String(easyStageAnswers[questionNumber].answer)){
+          res.cookie(easyStageAnswers[questionNumber].keyName,
+                     easyStageAnswers[questionNumber].keyGiven,
+                     {maxAge: 604800000, httpOnly: true, domain: ".stem-week-cipher.herokuapp.com"}
+                    ); //expires: false, secure: true,httpOnly: true,
+          res.send({
+            "status": "pass",
+            "message": "Well done! Let's move on to the next question!"
+          });
+          return;
+        } else {
+          res.send({
+            "status": "fail",
+            "errorMessage": "Wrong Answer! Please Try again!"
+          })
+        }
+      } else {
+        for (let temperedIndivKey of temperedKeys){
+          res.clearCookie(String(temperedIndivKey));
+        }
+        res.send({
+          "status": "fail",
+          "errorMessage": "Cookie tempering detected."
+        });
+        return;
+      }
+
     } else {
-      res.send(//show one of the values is empty);
+      res.send({
+        "status": "fail",
+        "errorMessage": "Missing Argument!"
+      });
+      return;
     }
   } else {
-    res.send(//show nth is given. )
+    res.send({
+      "status": "fail",
+      "errorMessage": "Request Body is Empty!"
+    });
+    return;
   }
-  console.log(req.body);
-  res.cookie('key', "cyx", {maxAge: 604800000, httpOnly: true, domain: ".stem-week-cipher.herokuapp.com"}); //expires: false, secure: true,httpOnly: true,
-  res.sendFile(__dirname + '/test.png');
-  //res.cookie('email', "cyx", { maxAge: 900000, httpOnly: true });
-  //res.send("hello world!")*/
 })
 
 export {easyStage}
