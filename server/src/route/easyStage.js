@@ -68,13 +68,14 @@ easyStage.post('/check', cors(corsOptions), function (req, res) {
           })
         }
       } else {
+        console.log(temperedKeys, easyStageAnswers[Number(lastNonTemperedKey)+1].url)
         for (let temperedIndivKey of temperedKeys){
           res.clearCookie(String(temperedIndivKey));
         }
         res.send({
           "status": "fail",
           "errorMessage": "Cookie tempering detected.",
-          "returnQn": easyStageAnswers[Number(lastNonTemperedKey)+1].url
+          "returnQn": easyStageAnswers[Number(lastNonTemperedKey)+1]["url"]
         });
         return;
       }
