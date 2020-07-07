@@ -75,7 +75,9 @@ difficultStage.post('/check', cors(corsOptions), function (req, res) {
         }
       } else {
         for (let temperedIndivKey of temperedKeys){
-          res.clearCookie(String(temperedIndivKey));
+          res.clearCookie(String(temperedIndivKey),
+                          {httpOnly: true, domain: ".stem-week-cipher.herokuapp.com", path:"/easy"}
+                        );
         }
         res.send({
           "status": "fail",
