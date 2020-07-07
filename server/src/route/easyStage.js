@@ -28,11 +28,11 @@ easyStage.use(function timeLog (req, res, next) {
 easyStage.options("*", cors(corsOptions))
 
 easyStage.post('/b25l', cors(corsOptions), function (req, res) {
-  if (req.body) {
+  /*if (req.body) {
     let questionNumber = req.body.qn ? String(req.body.qn) : null;
     let answer = req.body.answer ? String(req.body.answer) : null;
     if (questionNumber && answer){
-      
+
     } else {
       res.send(//show one of the values is empty);
     }
@@ -43,7 +43,7 @@ easyStage.post('/b25l', cors(corsOptions), function (req, res) {
   res.cookie('key', "cyx", {maxAge: 604800000, httpOnly: true, domain: ".stem-week-cipher.herokuapp.com"}); //expires: false, secure: true,httpOnly: true,
   res.sendFile(__dirname + '/test.png');
   //res.cookie('email', "cyx", { maxAge: 900000, httpOnly: true });
-  //res.send("hello world!")
+  //res.send("hello world!")*/
 })
 
 export {easyStage}
