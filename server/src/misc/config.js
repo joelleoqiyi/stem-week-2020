@@ -106,15 +106,15 @@ module.exports = {
     "e7": "world"
   },
   difficultKey:{
-    "d0": "1234",
-    "d1": "world",
-    "d2": "world",
-    "d3": "world",
-    "d4": "world",
-    "d5": "world",
-    "d6": "world",
-    "d7": "world",
-    "d8": "world"
+    "d0": "eden",
+    "d1": "eden",
+    "d2": "eden",
+    "d3": "eden",
+    "d4": "eden",
+    "d5": "eden",
+    "d6": "eden",
+    "d7": "eden",
+    "d8": "eden"
   },
   whitelistURL: ['http://localhost:1234', "https://serenesmartlava--20y5c35liu.repl.co", "https://stem--rea123.repl.co", "https://stemmain--kgwxf.repl.co"]
 };

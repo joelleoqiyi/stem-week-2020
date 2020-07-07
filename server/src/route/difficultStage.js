@@ -74,6 +74,7 @@ difficultStage.post('/check', cors(corsOptions), function (req, res) {
           })
         }
       } else {
+        console.log(temperedKeys)
         for (let temperedIndivKey of temperedKeys){
           res.clearCookie(String(temperedIndivKey));
         }
