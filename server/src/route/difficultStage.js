@@ -36,6 +36,7 @@ difficultStage.post('/check', cors(corsOptions), function (req, res) {
     let temperedKeys = [];
     if (questionNumber !== null && clientAnswer){
       console.log(`\(NEW\) user submitting to DIFFICULT:${questionNumber}`);
+      console.log(res.cookies);
       if (res.cookies){
         temperedKeys = cookieChecker(0, res.cookies, Number(questionNumber));
       } else {
@@ -67,6 +68,7 @@ difficultStage.post('/check', cors(corsOptions), function (req, res) {
             return;
           }
         } else {
+          console.log(`USer`)
           res.send({
             "status": "fail",
             "errorMessage": "Wrong Answer! Please Try again!"
