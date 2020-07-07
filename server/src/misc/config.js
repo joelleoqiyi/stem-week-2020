@@ -6,41 +6,49 @@ module.exports = {
       "answer": "pacman",
       "keyName": "e0",
       "keyGiven": "eden",
+      "url": "https://google.com"
     },
     {
       "answer": "minecraft",
       "keyName": "e1",
-      "keyGiven": "eden"
+      "keyGiven": "eden",
+      "url": "https://google.com"
     },
     {
       "answer": "nintendo",
       "keyName": "e2",
-      "keyGiven": "eden"
+      "keyGiven": "eden",
+      "url": "https://google.com"
     },
     {
       "answer": "felix",
       "keyName": "e3",
-      "keyGiven": "eden"
+      "keyGiven": "eden",
+      "url": "https://google.com"
     },
     {
       "answer": "eden",
       "keyName": "e4",
-      "keyGiven": "eden"
+      "keyGiven": "eden",
+      "url": "https://google.com"
     },
     {
       "answer": "JNUW17",
       "keyName": "e5",
-      "keyGiven": "eden"
+      "keyGiven": "eden",
+      "url": "https://google.com"
     },
     {
       "answer": "eukolis",
       "keyName": "e6",
-      "keyGiven": "eden"
+      "keyGiven": "eden",
+      "url": "https://google.com"
     },
     {
       "answer": "147852",
       "keyName": "e7",
-      "keyGiven": "eden"
+      "keyGiven": "eden",
+      "url": "https://google.com"
     }
   ],
   difficultStageAnswers:[
