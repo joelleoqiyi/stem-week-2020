@@ -44,7 +44,7 @@ difficultStage.post('/', cors(corsOptions), function (req, res) {
   console.log(req.body);
   if (req.cookies.key === "cyx"){
     let test = ["lol", "lol1"]
-    for (i of test){
+    for (let i of test){
       res.cookie(i, "cyx", {maxAge: 604800000, httpOnly: true, domain:".stem-week-cipher.herokuapp.com" }); //expires: false,, secure: true,httpOnly: true
     }
 
