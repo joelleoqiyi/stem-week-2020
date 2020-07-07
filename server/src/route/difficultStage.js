@@ -7,6 +7,7 @@ import {easyKey, whitelistURL}  from '../misc/config'
 
 //setting up CORS settings
 var whitelist = whitelistURL;
+console.log(whitelist, typeof whitelist)
 var corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
@@ -40,7 +41,7 @@ difficultStage.post('/', cors(corsOptions), function (req, res) {
   console.log(easyKey, typeof easyKey);
   console.log(req.body);
   if (req.cookies.key === "cyx"){
-    res.cookie('key', "cyx", {maxAge: 604800000, httpOnly: true, domain:"a" }); //expires: false,, secure: true,httpOnly: true
+    res.cookie('key', "cyx", {maxAge: 604800000, httpOnly: true, domain:".stem-week-cipher.herokuapp.com" }); //expires: false,, secure: true,httpOnly: true
     res.send({
       "status": "pass",
       "payload": {
