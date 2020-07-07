@@ -2,9 +2,11 @@
 var express = require('express')
 var difficultStage = express.Router()
 var cors = require('cors')
+import {easyKey}  from './misc/config'
+
 
 //setting up CORS settings
-var whitelist = ['http://localhost:1234', "https://serenesmartlava--20y5c35liu.repl.co", "https://stem--rea123.repl.co", "https://stemmain--kgwxf.repl.co"];
+var whitelist = whitelistURL;
 var corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
@@ -35,6 +37,7 @@ difficultStage.post('/', cors(corsOptions), function (req, res) {
 
   } */
   console.log(req.cookies);
+  console.log(easyKey, typeof easyKey);
   console.log(req.body);
   if (req.cookies.key === "cyx"){
     res.cookie('key', "cyx", {maxAge: 604800000, httpOnly: true, domain:"a" }); //expires: false,, secure: true,httpOnly: true
