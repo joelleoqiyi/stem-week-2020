@@ -5,22 +5,22 @@ module.exports = {
     {
       "answer": "pacman",
       "keyName": "e0",
-      "keyGiven": "n",
+      "keyGiven": "eden",
     },
     {
       "answer": "minecraft",
       "keyName": "e1",
-      "keyGiven": "e"
+      "keyGiven": "eden"
     },
     {
       "answer": "nintendo",
       "keyName": "e2",
-      "keyGiven": "d"
+      "keyGiven": "eden"
     },
     {
       "answer": "felix",
       "keyName": "e3",
-      "keyGiven": "e"
+      "keyGiven": "eden"
     },
     {
       "answer": "eden",
@@ -105,14 +105,14 @@ module.exports = {
     }
   ],
   easyKey: {
-    "e0": "1234",
-    "e1": "world",
-    "e2": "world",
-    "e3": "world",
-    "e4": "world",
-    "e5": "world",
-    "e6": "world",
-    "e7": "world"
+    "e0": "eden",
+    "e1": "eden",
+    "e2": "eden",
+    "e3": "eden",
+    "e4": "eden",
+    "e5": "eden",
+    "e6": "eden",
+    "e7": "eden"
   },
   difficultKey:{
     "d0": "eden",
