@@ -36,9 +36,8 @@ difficultStage.post('/check', cors(corsOptions), function (req, res) {
     let temperedKeys = [];
     if (questionNumber !== null && clientAnswer){
       console.log(`\(NEW\) user submitting to DIFFICULT:${questionNumber}`);
-      console.log(res.cookies);
-      if (res.cookies){
-        temperedKeys = cookieChecker(0, res.cookies, Number(questionNumber));
+      if (req.cookies){
+        temperedKeys = cookieChecker(0, req.cookies, Number(questionNumber));
       } else {
         //only accept if first time
         if (questionNumber === 0){

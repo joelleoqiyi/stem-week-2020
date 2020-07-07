@@ -35,8 +35,8 @@ easyStage.post('/check', cors(corsOptions), function (req, res) {
     let temperedKeys = [];
     if (questionNumber !== null && clientAnswer){
       console.log(`\(NEW\) user submitting to EASY:${questionNumber}`);
-      if (res.cookies){
-        temperedKeys = cookieChecker(1, res.cookies, Number(questionNumber));
+      if (req.cookies){
+        temperedKeys = cookieChecker(1, req.cookies, Number(questionNumber));
       } else {
         //only accept if first time
         if (questionNumber === 0){
