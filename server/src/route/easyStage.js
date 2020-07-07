@@ -54,7 +54,7 @@ easyStage.post('/check', cors(corsOptions), function (req, res) {
         if (String(clientAnswer) === String(easyStageAnswers[questionNumber].answer)){
           res.cookie(easyStageAnswers[questionNumber].keyName,
                      easyStageAnswers[questionNumber].keyGiven,
-                     {maxAge: 604800000, httpOnly: true, domain: ".stem-week-cipher.herokuapp.com"}
+                     {maxAge: 604800000, httpOnly: true, domain: ".stem-week-cipher.herokuapp.com", path:"/easy"}
                     ); //expires: false, secure: true,httpOnly: true,
           res.send({
             "status": "pass",
