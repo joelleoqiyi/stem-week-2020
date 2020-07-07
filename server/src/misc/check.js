@@ -7,13 +7,11 @@ function cookieChecker(stageType, clientCookies, question) {
   let modelKeys = Object.keys(modelKeyValue);
   let sortedClientCookies = {};
   let lastKey = "";
-  console.log(lastKey, sortedClientCookies, clientCookies, modelKeys, modelKeyValue)
   Object.keys(clientCookies).sort().forEach(function(key) {
     sortedClientCookies[key] = clientCookies[key];
   });
   let clientCookieKeys = Object.keys(sortedClientCookies);
   for (let indivKey of modelKeys){
-    console.log(indivKey);
     if (sortedClientCookies[indivKey] && sortedClientCookies[indivKey] === modelKeyValue[indivKey]){
       lastKey = indivKey;
     } else {
@@ -22,7 +20,7 @@ function cookieChecker(stageType, clientCookies, question) {
       } else {
         let lastNonTemperedKey = clientCookieKeys.indexOf(lastKey);
         let tamperedKeys = clientCookieKeys.splice(lastNonTemperedKey+1, clientCookieKeys.length);
-        return tamperedKeys;
+        return [tamperedKeys, lastNonTemperedKey];
       }
     }
   }

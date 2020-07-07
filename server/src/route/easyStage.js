@@ -33,10 +33,11 @@ easyStage.post('/check', cors(corsOptions), function (req, res) {
     let questionNumber = (Number(req.body.qn) > -1 && Number(req.body.qn) < 8) ? Number(req.body.qn) : null;
     let clientAnswer = req.body.answer ? String(req.body.answer) : null;
     let temperedKeys = [];
+    let lastNonTemperedKey = null;
     if (questionNumber !== null && clientAnswer){
       console.log(`\(NEW\) user submitting to EASY:${questionNumber}`);
       if (req.cookies){
-        temperedKeys = cookieChecker(1, req.cookies, Number(questionNumber));
+        [temperedKeys,lastNonTemperedKey] = cookieChecker(1, req.cookies, Number(questionNumber));
       } else {
         //only accept if first time
         if (questionNumber === 0){
@@ -72,7 +73,8 @@ easyStage.post('/check', cors(corsOptions), function (req, res) {
         }
         res.send({
           "status": "fail",
-          "errorMessage": "Cookie tempering detected."
+          "errorMessage": "Cookie tempering detected.",
+          "returnQn": easyStageAnswers[Number(lastNonTemperedKey)+1].url
         });
         return;
       }

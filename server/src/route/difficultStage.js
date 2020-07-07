@@ -34,10 +34,11 @@ difficultStage.post('/check', cors(corsOptions), function (req, res) {
     let questionNumber = (Number(req.body.qn) > -1 && Number(req.body.qn) < 9) ? Number(req.body.qn) : null;
     let clientAnswer = req.body.answer ? String(req.body.answer) : null;
     let temperedKeys = [];
+    let lastNonTemperedKey = null;
     if (questionNumber !== null && clientAnswer){
       console.log(`\(NEW\) user submitting to DIFFICULT:${questionNumber}`);
       if (req.cookies){
-        temperedKeys = cookieChecker(0, req.cookies, Number(questionNumber));
+        [temperedKeys,lastNonTemperedKey] = cookieChecker(0, req.cookies, Number(questionNumber));
       } else {
         //only accept if first time
         if (questionNumber === 0){
@@ -67,20 +68,19 @@ difficultStage.post('/check', cors(corsOptions), function (req, res) {
             return;
           }
         } else {
-          console.log(`USer`)
           res.send({
             "status": "fail",
             "errorMessage": "Wrong Answer! Please Try again!"
           })
         }
       } else {
-        console.log(temperedKeys)
         for (let temperedIndivKey of temperedKeys){
           res.clearCookie(String(temperedIndivKey));
         }
         res.send({
           "status": "fail",
-          "errorMessage": "Cookie tempering detected."
+          "errorMessage": "Cookie tempering detected.",
+          "returnQn": difficultStageAnswers[Number(lastNonTemperedKey)+1].url
         });
         return;
       }

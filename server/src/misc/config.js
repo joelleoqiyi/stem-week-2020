@@ -48,51 +48,60 @@ module.exports = {
       "answer": "Britain",
       "keyName": "d0",
       "keyGiven": "eden",
-      "imageGiven": "p1.png"
+      "imageGiven": "p1.png",
+      "url": "https://google.com"
     },
     {
       "answer": "1975",
       "keyName": "d1",
       "keyGiven": "eden",
-      "imageGiven": "p2.png"
+      "imageGiven": "p2.png",
+      "url": "https://google.com"
     },
     {
       "answer": "snake",
       "keyName": "d2",
       "keyGiven": "eden",
-      "imageGiven": "p3.png"
+      "imageGiven": "p3.png",
+      "url": "https://google.com"
     },
     {
       "answer": "javascript",
       "keyName": "d3",
       "keyGiven": "eden",
-      "imageGiven": "p4.png"
+      "imageGiven": "p4.png",
+      "url": "https://google.com"
     },
     {
       "answer": "iphone5",
       "keyName": "d4",
       "keyGiven": "eden",
-      "imageGiven": "p5.jpg"
+      "imageGiven": "p5.jpg",
+      "url": "https://google.com"
     },
     {
       "answer": "80816",
       "keyName": "d5",
-      "keyGiven": "eden"
+      "keyGiven": "eden",
+      "url": "https://google.com"
     },
     {
       "answer": "red",
       "keyName": "d6",
-      "keyGiven": "eden"
+      "keyGiven": "eden",
+      "url": "https://google.com"
     },
     {
       "answer": "8",
       "keyName": "d7",
-      "keyGiven": "eden"
+      "keyGiven": "eden",
+      "url": "https://google.com"
     },
     {
       "answer": "crashcourse",
       "keyName": "d8",
-      "keyGiven": "eden"
+      "keyGiven": "eden",
+      "url": "https://google.com"
     }
   ],
   easyKey: {
