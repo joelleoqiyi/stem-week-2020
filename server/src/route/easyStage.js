@@ -32,7 +32,19 @@ easyStage.post('/b25l', cors(corsOptions), function (req, res) {
     let questionNumber = req.body.qn ? String(req.body.qn) : null;
     let answer = req.body.answer ? String(req.body.answer) : null;
     if (questionNumber && answer){
-
+      answerKeys = Object.keys(easyKey);
+      cookieKeys = Object.keys(res.cookies);
+      for (indivKey of answerKeys){
+        if (cookieKeys.indexOf(indivKey) !== -1){
+          if (String(res.cookies.indivKey) !== String(easyKey.indivKey)){
+            res.clearCookie();
+            res.send();
+            return 0;
+          }
+        } else {
+          //end
+        }
+      }
     } else {
       res.send(//show one of the values is empty);
     }
