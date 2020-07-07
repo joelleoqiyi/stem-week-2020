@@ -2,7 +2,7 @@
 var express = require('express')
 var difficultStage = express.Router()
 var cors = require('cors')
-import {easyKey}  from '../misc/config'
+import {easyKey, whitelistURL}  from '../misc/config'
 
 
 //setting up CORS settings

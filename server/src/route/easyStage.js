@@ -1,5 +1,5 @@
 //import supporting files
-import {whitelistURL, } from '../misc/config'
+import {whitelistURL} from '../misc/config'
 
 //declaring variables, npm packages
 var express = require('express')
