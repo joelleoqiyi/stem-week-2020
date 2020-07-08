@@ -28,14 +28,14 @@ function cookieChecker(stageType, clientCookies, question) {
       if (lastKey === modelKeys[question-1]){
         return [[], null];
       } else {
-        console.log("cookie spliced?", lastNonTemperedKey, lastKey, clientCookieKeys)
-        let lastNonTemperedKey = clientCookieKeys.indexOf(lastKey);
-        clientCookieKeys.splice(lastNonTemperedKey+1, clientCookieKeys.length).forEach(function(key){
-          if (temperedKeys.indexOf(key) === -1){
-            temperedKeys.push(key);
+        let lastNonTamperedKey = clientCookieKeys.indexOf(lastKey);
+        console.log("cookie spliced?", lastNonTamperedKey, lastKey, clientCookieKeys)
+        clientCookieKeys.splice(lastNonTamperedKey+1, clientCookieKeys.length).forEach(function(key){
+          if (tamperedKeys.indexOf(key) === -1){
+            tamperedKeys.push(key);
           }
         })
-        return [tamperedKeys, lastNonTemperedKey];
+        return [tamperedKeys, lastNonTamperedKey];
       }
     }
   }
