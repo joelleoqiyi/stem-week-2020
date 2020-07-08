@@ -13,10 +13,11 @@ function cookieChecker(stageType, clientCookies, question) {
   });
   let clientCookieKeys = Object.keys(sortedClientCookies);
   if (clientCookieKeys.length > Number(question)-1){
+    console.log(`clientCookies went overboard!`)
     tamperedKeys = clientCookieKeys.splice(Number(question), clientCookieKeys.length);
-  }
-  for (let deleteCookieKey of tamperedKeys){
-    delete sortedClientCookies[deleteCookieKey];
+    for (let deleteCookieKey of tamperedKeys){
+      delete sortedClientCookies[deleteCookieKey];
+    }
   }
   for (let indivKey of modelKeys){
     if (sortedClientCookies[indivKey] && sortedClientCookies[indivKey] === modelKeyValue[indivKey]){
@@ -31,7 +32,7 @@ function cookieChecker(stageType, clientCookies, question) {
             temperedKeys.push(key);
           }
         })
-        return [tamperedKeys, lastNonTemperedKey]; 
+        return [tamperedKeys, lastNonTemperedKey];
       }
     }
   }
