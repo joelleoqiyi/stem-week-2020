@@ -12,7 +12,7 @@ function cookieChecker(stageType, clientCookies, question) {
     sortedClientCookies[key] = clientCookies[key];
   });
   let clientCookieKeys = Object.keys(sortedClientCookies);
-  if (clientCookieKeys.length > Number(question)-1){
+  if (clientCookieKeys.length > Number(question)){
     console.log(`clientCookies went overboard!`)
     tamperedKeys = clientCookieKeys.splice(Number(question), clientCookieKeys.length);
     for (let deleteCookieKey of tamperedKeys){
