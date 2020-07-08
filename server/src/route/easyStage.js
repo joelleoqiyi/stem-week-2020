@@ -68,6 +68,7 @@ easyStage.post('/check', cors(corsOptions), function (req, res) {
           })
         }
       } else {
+        console.log("cookie tempering detected within users!", temperedKeys)
         for (let temperedIndivKey of temperedKeys){
           res.clearCookie(String(temperedIndivKey),
                           {httpOnly: true, domain: ".stem-week-cipher.herokuapp.com", path:"/easy"}

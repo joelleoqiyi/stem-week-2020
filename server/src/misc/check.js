@@ -26,7 +26,7 @@ function cookieChecker(stageType, clientCookies, question) {
     } else {
       console.log("cookie Splicing!", lastKey, modelKeys[question-1])
       if (lastKey === modelKeys[question-1]){
-        return [];
+        return [[], null];
       } else {
         console.log("cookie spliced?", lastNonTemperedKey, lastKey, clientCookieKeys)
         let lastNonTemperedKey = clientCookieKeys.indexOf(lastKey);
