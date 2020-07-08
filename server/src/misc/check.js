@@ -21,11 +21,14 @@ function cookieChecker(stageType, clientCookies, question) {
   }
   for (let indivKey of modelKeys){
     if (sortedClientCookies[indivKey] && sortedClientCookies[indivKey] === modelKeyValue[indivKey]){
+      console.log("cookie checked!", lastKey)
       lastKey = indivKey;
     } else {
+      console.log("cookie Splicing!", lastKey, modelKeys[question-1])
       if (lastKey === modelKeys[question-1]){
         return [];
       } else {
+        console.log("cookie spliced?", lastNonTemperedKey, lastKey, clientCookieKeys)
         let lastNonTemperedKey = clientCookieKeys.indexOf(lastKey);
         clientCookieKeys.splice(lastNonTemperedKey+1, clientCookieKeys.length).forEach(function(key){
           if (temperedKeys.indexOf(key) === -1){
