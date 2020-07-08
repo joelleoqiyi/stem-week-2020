@@ -76,7 +76,9 @@ easyStage.post('/check', cors(corsOptions), function (req, res) {
         res.send({
           "status": "fail",
           "errorMessage": "Cookie tempering detected.",
-          "returnQn": easyStageAnswers[Number(lastNonTemperedKey)+1]["url"]
+          "returnQn": (lastNonTemperedKey !== null)
+                      ? easyStageAnswers[Number(lastNonTemperedKey)+1]["url"]
+                      : easyStageAnswers[0]["url"]
         });
         return;
       }

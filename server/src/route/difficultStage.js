@@ -82,7 +82,9 @@ difficultStage.post('/check', cors(corsOptions), function (req, res) {
         res.send({
           "status": "fail",
           "errorMessage": "Cookie tempering detected.",
-          "returnQn": difficultStageAnswers[Number(lastNonTemperedKey)+1]["url"]
+          "returnQn": (lastNonTemperedKey !== null)
+                      ? difficultStageAnswers[Number(lastNonTemperedKey)+1]["url"]
+                      : difficultStageAnswers[0]["url"]
         });
         return;
       }
