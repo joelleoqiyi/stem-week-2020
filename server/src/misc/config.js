@@ -133,5 +133,5 @@ module.exports = {
     "d7": "eden",
     "d8": "eden"
   },
-  whitelistURL: ['http://localhost:1234', "https://serenesmartlava--20y5c35liu.repl.co", "https://stem--rea123.repl.co", "https://stemmain--kgwxf.repl.co", "https://stem.rea123.repl.co"]
+  whitelistURL: ['https://stem-week-cipher-web.herokuapp.com', "https://stem.rea123.repl.co"]
 };
