@@ -57,8 +57,8 @@ difficultStage.post('/check', cors(corsOptions), function (req, res) {
                      difficultStageAnswers[questionNumber].keyGiven,
                      {maxAge: 604800000, httpOnly: true, domain: ".stem-week-cipher.herokuapp.com", path:"/difficult"}
                     ); //expires: false, secure: true,httpOnly: true,
-          if (questionNumber < 5){ //special case of pictures. will hardcode this time :(
-            res.sendFile(path.join(__dirname, '../public', difficultStageAnswers[questionNumber].imageGiven));
+          if (questionNumber === 4){ //special case of pictures. will hardcode this time :(
+            res.sendFile(path.join(__dirname, '../public', "p1.png"));
             return;
           } else {
             res.send({
