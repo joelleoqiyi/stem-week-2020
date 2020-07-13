@@ -5,49 +5,49 @@ module.exports = {
     {
       "answer": "pacman",
       "keyName": "e0",
-      "keyGiven": "eden",
+      "keyGiven": "a2luZ29sZGlzZ29k",
       "url": "https://google.com"
     },
     {
       "answer": "minecraft",
       "keyName": "e1",
-      "keyGiven": "eden",
+      "keyGiven": "c2F2ZW15d29ybGRz",
       "url": "https://google.com"
     },
     {
       "answer": "nintendo",
       "keyName": "e2",
-      "keyGiven": "eden",
+      "keyGiven": "d2hvYXJleW91",
       "url": "https://google.com"
     },
     {
       "answer": "felix",
       "keyName": "e3",
-      "keyGiven": "eden",
+      "keyGiven": "c3RlbXdlZWtiZXN0",
       "url": "https://google.com"
     },
     {
       "answer": "eden",
       "keyName": "e4",
-      "keyGiven": "eden",
+      "keyGiven": "d2hvYW1p",
       "url": "https://google.com"
     },
     {
       "answer": "jnuw17",
       "keyName": "e5",
-      "keyGiven": "eden",
+      "keyGiven": "ZG95b3VsaWtlY2lwaGVy",
       "url": "https://google.com"
     },
     {
       "answer": "eukolis",
       "keyName": "e6",
-      "keyGiven": "eden",
+      "keyGiven": "d2hvZG95b3VsaWtl",
       "url": "https://google.com"
     },
     {
       "answer": "147852",
       "keyName": "e7",
-      "keyGiven": "eden",
+      "keyGiven": "Y2xhcGNsYXBjbGFw",
       "url": "https://google.com"
     }
   ],
@@ -55,83 +55,83 @@ module.exports = {
     {
       "answer": "britain",
       "keyName": "d0",
-      "keyGiven": "eden",
+      "keyGiven": "SEUxMU9fVzBSTERE",
       "imageGiven": "p1.png",
       "url": "https://google.com"
     },
     {
       "answer": "1975",
       "keyName": "d1",
-      "keyGiven": "eden",
+      "keyGiven": "SjAxTl9JQ0NfTjB3",
       "imageGiven": "p2.png",
       "url": "https://google.com"
     },
     {
       "answer": "snake",
       "keyName": "d2",
-      "keyGiven": "eden",
+      "keyGiven": "SjAxTl9jMG1QdXQxbmdfTjB3",
       "imageGiven": "p3.png",
       "url": "https://google.com"
     },
     {
       "answer": "javascript",
       "keyName": "d3",
-      "keyGiven": "eden",
+      "keyGiven": "YzAwa2llc19hUmVfdjNyWV9zQWYz",
       "imageGiven": "p4.png",
       "url": "https://google.com"
     },
     {
       "answer": "iphone5",
       "keyName": "d4",
-      "keyGiven": "eden",
+      "keyGiven": "aDB3X0FCMHVUX2wwY0FsU3RyMFJBZzNf",
       "imageGiven": "p5.jpg",
       "url": "https://google.com"
     },
     {
       "answer": "80816",
       "keyName": "d5",
-      "keyGiven": "eden",
+      "keyGiven": "MHJfczM1NWlvbjVUMHJhRzNf",
       "url": "https://google.com"
     },
     {
       "answer": "red",
       "keyName": "d6",
-      "keyGiven": "eden",
+      "keyGiven": "Y0FuX3kwdV90SDFOa18wZl9hTnl0aDFuR19lMTVl",
       "url": "https://google.com"
     },
     {
       "answer": "8",
       "keyName": "d7",
-      "keyGiven": "eden",
+      "keyGiven": "cDFFYTVFX2QwblRfX2hBY0tfX00z",
       "url": "https://google.com"
     },
     {
       "answer": "crashcourse",
       "keyName": "d8",
-      "keyGiven": "eden",
+      "keyGiven": "eUF5X0NlbDNCckF0MW9u",
       "url": "https://google.com"
     }
   ],
   easyKey: {
-    "e0": "eden",
-    "e1": "eden",
-    "e2": "eden",
-    "e3": "eden",
-    "e4": "eden",
-    "e5": "eden",
-    "e6": "eden",
-    "e7": "eden"
+    "e0": "a2luZ29sZGlzZ29k",
+    "e1": "c2F2ZW15d29ybGRz",
+    "e2": "d2hvYXJleW91",
+    "e3": "c3RlbXdlZWtiZXN0",
+    "e4": "d2hvYW1p",
+    "e5": "ZG95b3VsaWtlY2lwaGVy",
+    "e6": "d2hvZG95b3VsaWtl",
+    "e7": "Y2xhcGNsYXBjbGFw"
   },
   difficultKey:{
-    "d0": "eden",
-    "d1": "eden",
-    "d2": "eden",
-    "d3": "eden",
-    "d4": "eden",
-    "d5": "eden",
-    "d6": "eden",
-    "d7": "eden",
-    "d8": "eden"
+    "d0": "SEUxMU9fVzBSTERE",
+    "d1": "SjAxTl9JQ0NfTjB3",
+    "d2": "SjAxTl9jMG1QdXQxbmdfTjB3",
+    "d3": "YzAwa2llc19hUmVfdjNyWV9zQWYz",
+    "d4": "aDB3X0FCMHVUX2wwY0FsU3RyMFJBZzNf",
+    "d5": "MHJfczM1NWlvbjVUMHJhRzNf",
+    "d6": "Y0FuX3kwdV90SDFOa18wZl9hTnl0aDFuR19lMTVl",
+    "d7": "cDFFYTVFX2QwblRfX2hBY0tfX00z",
+    "d8": "eUF5X0NlbDNCckF0MW9u"
   },
   whitelistURL: ['https://stem-week-cipher-web.herokuapp.com', "https://stem.rea123.repl.co"]
 };
